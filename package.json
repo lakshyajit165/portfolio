@@ -4,7 +4,7 @@
   "description": "My portfolio in node.js",
   "main": "app.js",
   "scripts": {
-    "start": "node portfolio"
+    "start": "node app"
   },
   "author": "Lk",
   "license": "ISC",
