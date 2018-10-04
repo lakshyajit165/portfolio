@@ -40,7 +40,7 @@ app.post('/send', (req,res) => {
             const output = `
 
         		<p>You have a new contact request!</p>
-        		<h3>Contact Details</h3>
+        		<h3>Contact Details:</h3>
         		<ul>
         			<li>Email: ${req.body.email}</li>
         			<li>Name : ${req.body.name}</li>
@@ -52,12 +52,12 @@ app.post('/send', (req,res) => {
 
         	// create reusable transporter object using the default SMTP transport
             let transporter = nodemailer.createTransport({
-                host: 'smtp.stackmail.com', //'smtp.ethereal.email',
-                port: 587,//587,
+                host: 'smtp.gmail.com', //'smtp.ethereal.email',
+                port: 587,//587
                 secure: false, // true for 465, false for other ports
                 auth: {
-                    user: 'contact@iamlakshyajit.in', // generated ethereal user
-                    pass: 'gagool123'//account.pass ''// generated ethereal password
+                    user: 'lakshmeekant@gmail.com', // generated ethereal user
+                    pass: 'lcxlzbdxwsvdcwno'//account.pass ''// generated ethereal password
                 },
                 tls:{
                 	rejectUnauthorized: false
@@ -76,6 +76,7 @@ app.post('/send', (req,res) => {
             // send mail with defined transport object
             transporter.sendMail(mailOptions, (error, info) => {
                 if (error) {
+                    res.render('contact',{msg:'Message not sent...Please try again!',val:'alert alert-danger'});
                     return console.log(error);
                 }
                 console.log('Message sent: %s', info.messageId);

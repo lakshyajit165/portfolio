@@ -2,12 +2,14 @@
 <div class="wrapper animated bounceInLeft">
 <h1>Let's Get in Touch!</h1>
 <p>Just drop in a message and I'll be back to you asap!</p><br>
-<div class="container col-lg-6 form-box">
+<div class="container col-lg-10 form-box">
 	<div class="container col-lg-10">
 		
+	<div class="{{val}} text-center mx-auto" role="alert">
+		  {{msg}}
+	</div>	
 
-
-	<form class="form-signin col-lg-12" method = "POST" action = "send">
+	<!--<form class="form-signin col-lg-12" method = "POST" action = "send">
 
 		<div class="form-group row">
 			
@@ -37,7 +39,44 @@
 		</div><br>
         <button class="btn btn-lg btn-light" type="submit">Send!</button>
         <br>
-	</form>
+	</form>-->
+		<form method = "POST" action = "send">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Name</label>
+                            <input type="text" class="form-control" id="Name" name="name" placeholder="Enter name" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"></span>
+                                </span>
+                                <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Enter email" required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Phone</label>
+                            <input type="text" id="phone" class="form-control" name="phone" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Message</label>
+                            <textarea name="message" id="message" name="message" class="form-control" rows="9" cols="25" required="required"
+                                placeholder="Message"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-light btn-lg" id="btnContactUs">
+                            Send Message <i class="fa fa-paper-plane"></i></button>
+                    </div>
+                </div>
+        </form>
 	</div>
 </div>
 </div>
